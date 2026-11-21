@@ -1,0 +1,17 @@
+# Shared RuboCop settings for CMU Web Rails apps:
+# Rails' own style (rubocop-rails-omakase), which new apps start with, and
+# the files no app lints. In the app's .rubocop.yml:
+#
+#   inherit_gem:
+#     cmu-web-style: config/rubocop.yml
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+AllCops:
+  Exclude:
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"

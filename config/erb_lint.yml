@@ -1,0 +1,35 @@
+# Shared erb_lint settings for CMU Web Rails apps.
+# In the app's .erb_lint.yml:
+#
+#   inherit_gem:
+#     cmu-web-style: config/erb_lint.yml
+EnableDefaultLinters: true
+exclude:
+  - "node_modules/**/*"
+  - "tmp/**/*"
+  - "vendor/**/*"
+linters:
+  ErbSafety:
+    enabled: true
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+      # Cops that misread Ruby cut into ERB tags
+      Layout/ArgumentAlignment:
+        Enabled: false
+      Layout/InitialIndentation:
+        Enabled: false
+      Layout/LineLength:
+        Enabled: false
+      Layout/TrailingEmptyLines:
+        Enabled: false
+      Layout/TrailingWhitespace:
+        Enabled: false
+      Lint/UselessAssignment:
+        Enabled: false
+      Naming/FileName:
+        Enabled: false
+      Style/FrozenStringLiteralComment:
+        Enabled: false
